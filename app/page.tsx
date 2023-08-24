@@ -1,79 +1,33 @@
-"use client";
+'use client'
 
-import { Player } from "@remotion/player";
-import type { NextPage } from "next";
-import React, { useMemo, useState } from "react";
-import { Main } from "../remotion/MyComp/Main";
-import {
-  CompositionProps,
-  defaultMyCompProps,
-  DURATION_IN_FRAMES,
-  VIDEO_FPS,
-  VIDEO_HEIGHT,
-  VIDEO_WIDTH,
-} from "../types/constants";
-import { z } from "zod";
-import { RenderControls } from "../components/RenderControls";
-import { Tips } from "../components/Tips/Tips";
-import { Spacing } from "../components/Spacing";
+import { Button, Layout, Typography } from 'antd';
+import { Content, Footer, Header } from 'antd/es/layout/layout';
+import Paragraph from 'antd/es/typography/Paragraph';
+import Title from 'antd/es/typography/Title';
+import { VideoCameraAddOutlined } from '@ant-design/icons';
+import { TopNav, BottomFooter, Carousel } from '@/components';
 
-const container: React.CSSProperties = {
-  maxWidth: 768,
-  margin: "auto",
-  marginBottom: 20,
-};
-
-const outer: React.CSSProperties = {
-  borderRadius: "var(--geist-border-radius)",
-  overflow: "hidden",
-  boxShadow: "0 0 200px rgba(0, 0, 0, 0.15)",
-  marginBottom: 40,
-  marginTop: 60,
-};
-
-const player: React.CSSProperties = {
-  width: "100%",
-};
-
-const Home: NextPage = () => {
-  const [text, setText] = useState<string>(defaultMyCompProps.title);
-
-  const inputProps: z.infer<typeof CompositionProps> = useMemo(() => {
-    return {
-      title: text,
-    };
-  }, [text]);
-
+export default function index() {
   return (
-    <div>
-      <div style={container}>
-        <div className="cinematics" style={outer}>
-          <Player
-            component={Main}
-            inputProps={inputProps}
-            durationInFrames={DURATION_IN_FRAMES}
-            fps={VIDEO_FPS}
-            compositionHeight={VIDEO_HEIGHT}
-            compositionWidth={VIDEO_WIDTH}
-            style={player}
-            controls
-            autoPlay
-            loop
-          />
+    <Layout>
+      <TopNav />
+      <Content className="flex row justify-between site-layout items-center" style={{ minHeight: '85vh', background: '#eee' }}>
+        <div className='p-6' style={{ maxWidth: '35vw', marginLeft: '80px' }}>
+          <Typography>
+            <Title style={{ fontSize: '45px' }}>Premium video meetings. Now free for everyone.</Title>
+            <Paragraph>
+              We re-engineered the service we built for secure business meetings, Google Meet, to make it free and available for all.
+            </Paragraph>
+          </Typography>
+          <Button type="primary" icon={<VideoCameraAddOutlined rev={undefined} />} size="large" style={{ backgroundColor: '#eb2f96' }} href='/generate'>
+            Generate Video
+          </Button>
         </div>
-        <RenderControls
-          text={text}
-          setText={setText}
-          inputProps={inputProps}
-        ></RenderControls>
-        <Spacing></Spacing>
-        <Spacing></Spacing>
-        <Spacing></Spacing>
-        <Spacing></Spacing>
-        <Tips></Tips>
-      </div>
-    </div>
-  );
-};
-
-export default Home;
+        <div className='p-6' style={{ maxWidth: '65vw', minHeight: '600px', marginRight: '60px' }}>
+          <Carousel />
+        </div>
+      </Content>
+      <BottomFooter />
+    </Layout>
+  )
+}

@@ -1,9 +1,8 @@
 'use client'
 
-import { Carousel, Radio, RadioChangeEvent, Typography } from 'antd';
+import { Carousel, Typography } from 'antd';
 import Paragraph from 'antd/es/typography/Paragraph';
 import Title from 'antd/es/typography/Title';
-import { useState } from 'react';
 
 export default function index() {
  return (

@@ -14,6 +14,10 @@
         --background-start-rgb: 255, 255, 255;
         --background-end-rgb: 255, 255, 255;
     }
+
+    .cinematics {
+        box-shadow: 0 0 200px rgba(255, 255, 255, 0.15);
+    }
 }
 
 body {
@@ -37,4 +41,8 @@ body {
     &:hover {
         background-color: unset !important;
     }
+}
+
+.cinematics {
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.15);
 }

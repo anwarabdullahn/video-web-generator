@@ -11,6 +11,9 @@ import {
 import { NextLogo } from "./MyComp/NextLogo";
 import { BirthdayComp } from "./BirthdayComp";
 import './index.css'
+import { BC1Comp } from "./BC1Comp";
+import { HappyPerson } from "./BirthdayComp/HappyPerson";
+import { AgeIncrement, ageIncrementProps } from "./BirthdayComp/AgeIncrement";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -42,6 +45,31 @@ export const RemotionRoot: React.FC = () => {
         fps={VIDEO_FPS}
         width={VIDEO_WIDTH}
         height={VIDEO_HEIGHT}
+      />
+      <Composition
+        id="BC1Comp"
+        component={BC1Comp}
+        durationInFrames={384}
+        fps={VIDEO_FPS}
+        width={VIDEO_WIDTH}
+        height={VIDEO_HEIGHT}
+      />
+      <Composition
+        id="HappyPerson"
+        component={HappyPerson}
+        durationInFrames={60}
+        fps={VIDEO_FPS}
+        width={VIDEO_WIDTH}
+        height={VIDEO_HEIGHT}
+      />
+      <Composition
+        id="AgeIncrement"
+        component={AgeIncrement}
+        durationInFrames={120}
+        fps={VIDEO_FPS}
+        width={VIDEO_WIDTH}
+        height={VIDEO_HEIGHT}
+        defaultProps={ageIncrementProps}
       />
     </>
   );

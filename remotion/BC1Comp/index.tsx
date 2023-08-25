@@ -1,6 +1,6 @@
 import { useVideoConfig, useCurrentFrame, spring, AbsoluteFill } from "remotion";
-import { Main, mainDefaultProps } from './comps'
-export const BirthdayComp = () => {
+import { BCPage1, page1DefaultProps } from './comps'
+export const BC1Comp = () => {
  const { fps, durationInFrames } = useVideoConfig()
  const frame = useCurrentFrame()
 
@@ -11,7 +11,7 @@ export const BirthdayComp = () => {
 
  return (
   <AbsoluteFill>
-   <Main {...mainDefaultProps} />
+   <BCPage1 {...page1DefaultProps} />
   </AbsoluteFill>
  )
 }

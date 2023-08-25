@@ -9,6 +9,8 @@ import {
   VIDEO_WIDTH,
 } from "../types/constants";
 import { NextLogo } from "./MyComp/NextLogo";
+import { BirthdayComp } from "./BirthdayComp";
+import './index.css'
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -32,6 +34,14 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           outProgress: 0,
         }}
+      />
+      <Composition
+        id="BirthdayComp"
+        component={BirthdayComp}
+        durationInFrames={384}
+        fps={VIDEO_FPS}
+        width={VIDEO_WIDTH}
+        height={VIDEO_HEIGHT}
       />
     </>
   );

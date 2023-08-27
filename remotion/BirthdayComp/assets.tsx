@@ -324,3 +324,20 @@ export const HappySVG = ({ props }: any) => (
   </g>
  </svg>
 )
+
+export const Stars = ({ fill }: any) => {
+ return (
+  <div>
+   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    data-name="Layer 1"
+    viewBox="0 0 200 200"
+  >
+    <path
+      d="m100 89.26 3.49 7.07 7.8 1.14-5.64 5.5 1.33 7.77-6.98-3.67-6.98 3.67 1.33-7.77-5.64-5.5 7.8-1.14 3.49-7.07z"
+      style={{ fill }}
+    />
+  </svg>
+  </div>
+ )
+}

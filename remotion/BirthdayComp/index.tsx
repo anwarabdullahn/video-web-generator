@@ -1,6 +1,6 @@
 import { AbsoluteFill } from "remotion";
 import { BirthdayCard, birthdayCardProps } from './BirthdayCard'
-import { BC1Comp } from "../BC1Comp";
+import { BC1Comp } from "./BC1Comp";
 export const BirthdayComp = () => {
 
  return (

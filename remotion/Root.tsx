@@ -11,10 +11,12 @@ import {
 import { NextLogo } from "./MyComp/NextLogo";
 import { BirthdayComp } from "./BirthdayComp";
 import './index.css'
-import { BC1Comp } from "./BC1Comp";
+import { BC1Comp } from "./BirthdayComp/BC1Comp";
 import { HappyPerson } from "./BirthdayComp/HappyPerson";
 import { AgeIncrement, ageIncrementProps } from "./BirthdayComp/AgeIncrement";
 import { BirthdayCard, birthdayCardProps } from "./BirthdayComp/BirthdayCard";
+import { Floating, floatingDefaultProps } from "./BirthdayComp/Floating";
+import { BC2Comp } from "./BirthdayComp/BC2Comp";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -56,6 +58,14 @@ export const RemotionRoot: React.FC = () => {
         height={VIDEO_HEIGHT}
       />
       <Composition
+        id="BC2Comp"
+        component={BC2Comp}
+        durationInFrames={384}
+        fps={VIDEO_FPS}
+        width={VIDEO_WIDTH}
+        height={VIDEO_HEIGHT}
+      />
+      <Composition
         id="HappyPerson"
         component={HappyPerson}
         durationInFrames={60}
@@ -80,6 +90,15 @@ export const RemotionRoot: React.FC = () => {
         width={VIDEO_WIDTH}
         height={VIDEO_HEIGHT}
         defaultProps={birthdayCardProps}
+      />
+      <Composition
+        id="Floating"
+        component={Floating}
+        durationInFrames={50}
+        fps={VIDEO_FPS}
+        width={200}
+        height={200}
+        defaultProps={floatingDefaultProps}
       />
     </>
   );

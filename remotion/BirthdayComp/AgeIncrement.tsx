@@ -27,9 +27,7 @@ export const AgeIncrement = ({ age }: z.infer<typeof CompositionProps>) => {
     animations={[
      Move({ start: 0, x: 660 }),
      Move({ y: -550, start: 30 }),
-     Fade({ to: 0, start: 70 }),
-     // Move({ y: 40, start: 100 }),
-     // Fade({ to: 0, start: 150 }),
+     Fade({ to: 0, start: 70 })
     ]}
    >
     <span className="my-0" style={{

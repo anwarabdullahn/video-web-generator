@@ -205,7 +205,7 @@ export const BCPage2 = ({ backgroundColor, wishes, color }: z.infer<typeof Page2
         </div>
         <div style={{
           position: 'absolute',
-          width: '360px',
+          width: '290px',
           bottom: '580px',
           left: '370px',
         }}>

@@ -28,6 +28,7 @@ export const BirthdayCard = ({ name, backgroundColor, color }: z.infer<typeof Co
         fontFamily: '"Segoe UI"',
         width: '1280px',
         height: '720px',
+        overflow: 'hidden'
       }}
     >
       <div className="flex flex-col" style={{ paddingLeft: '90px', paddingTop: '100px' }}>
@@ -37,11 +38,15 @@ export const BirthdayCard = ({ name, backgroundColor, color }: z.infer<typeof Co
         }}>{`Hello ${name}`}</span>
         <span style={{
           marginTop: '20px',
-          fontFamily: '"Noto Sans", sans-serif',
+          fontFamily: '"Handyplast", sans-serif',
           fontWeight: '500',
           fontStyle: 'italic',
           fontSize: '120px'
-        }}>Its Your Birthday</span>
+        }}>Its Your Birthday!</span>
+      </div>
+      <div className="ocean">
+        <div className="wave"></div>
+        <div className="wave"></div>
       </div>
     </AbsoluteFill>
   )

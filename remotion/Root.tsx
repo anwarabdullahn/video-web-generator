@@ -45,7 +45,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="BirthdayComp"
         component={BirthdayComp}
-        durationInFrames={384}
+        durationInFrames={310}
         fps={VIDEO_FPS}
         width={VIDEO_WIDTH}
         height={VIDEO_HEIGHT}

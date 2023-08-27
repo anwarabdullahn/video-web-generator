@@ -20,6 +20,7 @@ import { useMemo, useState } from 'react';
 import { RenderControls } from '@/components/RenderControls';
 import { Spacing } from '@/components/Spacing';
 import { Tips } from '@/components/Tips/Tips';
+import { BirthdayComp } from '@/remotion/BirthdayComp';
 
 const container: React.CSSProperties = {
   maxWidth: 768,
@@ -77,9 +78,9 @@ export default function index() {
           <div style={container}>
             <div className="cinematics" style={outer}>
               <Player
-                component={Main}
+                component={BirthdayComp}
                 inputProps={inputProps}
-                durationInFrames={DURATION_IN_FRAMES}
+                durationInFrames={310}
                 fps={VIDEO_FPS}
                 compositionHeight={VIDEO_HEIGHT}
                 compositionWidth={VIDEO_WIDTH}

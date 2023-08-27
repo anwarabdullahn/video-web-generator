@@ -37,10 +37,10 @@ export const BirthdayComp = () => {
    <Animated animations={[
     Move({ y: 300, x: 300, start: 0 }),
     Rotate({ start: 30, degrees: 30 }),
-    Move({ y: 1692, x: -997, start: 30 }),
-    Scale({ start: 30, by: 2.8 }),
-    Move({ x: -1317, start: 90 }),
-    Move({ y: -755, start: 170 }),
+    Move({ y: 1795, x: -1020, start: 30 }),
+    Scale({ start: 30, by: 2.9 }),
+    Move({ x: -1370, start: 90 }),
+    Move({ y: -790, start: 170 }),
    ]}>
     <div
      style={{

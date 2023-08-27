@@ -67,14 +67,9 @@ export const BCPage1 = ({ age, backgroundColor, color }: z.infer<typeof Page1Com
 }
 
 export const BCPage2 = ({ backgroundColor, wishes, color }: z.infer<typeof Page2CompositionProps>) => {
-  const { fps, durationInFrames } = useVideoConfig()
   const frame = useCurrentFrame()
   const rotateRight = `${frame * 5}deg`
   const rotateLeft = `${frame * -5}deg`
-  let scale = spring({
-    fps,
-    frame,
-  });
   const stars = [
     {
       fill: "#ef4b8b",

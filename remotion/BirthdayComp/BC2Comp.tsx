@@ -1,22 +1,15 @@
-import { useVideoConfig, useCurrentFrame, spring, AbsoluteFill } from "remotion";
-import { BCPage2, page2DefaultProps } from "./comps";
-export const BC2Comp = () => {
- const { fps, durationInFrames } = useVideoConfig()
- const frame = useCurrentFrame()
+import { AbsoluteFill } from "remotion";
+import { BCPage2, Page2CompositionProps } from "./comps";
+import { z } from "zod";
 
- const scale = spring({
-  fps,
-  frame,
- });
-
-
+export const BC2Comp = ({ ...props }: z.infer<typeof Page2CompositionProps>) => {
  return (
   <AbsoluteFill style={{
    width: '1280px',
    height: '720px',
    flexGrow: 1,
   }}>
-   <BCPage2 {...page2DefaultProps} />
+   <BCPage2 {...props} />
   </AbsoluteFill>
  )
 }

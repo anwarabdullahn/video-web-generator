@@ -220,7 +220,7 @@ export const BCPage2 = ({ backgroundColor, wishes, color }: z.infer<typeof Page2
           </Animated>
         </div>
       </Loop>
-      {stars && stars.map((star: any, index: number) => {
+      {stars && stars.map((star: any) => {
         return (
           <div style={{
             position: 'absolute',

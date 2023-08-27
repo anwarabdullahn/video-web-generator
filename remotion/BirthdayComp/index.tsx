@@ -18,15 +18,15 @@ export const BirthdayComp = () => {
  const rowList1 = [1, 2, 3, 1];
 
  const renderList = (rows: any, scale: '0.35') => {
-   const random = Math.floor(Math.random() * 9999)
   return (
    <div
     className="flex row"
+    key={uuidv4()}
     style={{
      flexGrow: 1,
      gap: '470px',
     }}>
-    {rows && rows.map((row: any, index: number) => (
+    {rows && rows.map((row: any) => (
      <div style={{ scale }} key={uuidv4()}>
       {componentList[row - 1]}
      </div>

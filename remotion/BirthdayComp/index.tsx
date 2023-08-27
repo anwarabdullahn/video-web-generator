@@ -4,6 +4,8 @@ import { BC1Comp } from "./BC1Comp";
 import { BC2Comp } from "./BC2Comp";
 import { page1DefaultProps, page2DefaultProps } from "./comps";
 import { Animated, Move, Rotate, Scale } from "remotion-animated";
+import { v4 as uuidv4 } from 'uuid';
+
 export const BirthdayComp = () => {
  const componentList = [
   <BC1Comp {...page1DefaultProps} />,
@@ -15,7 +17,8 @@ export const BirthdayComp = () => {
  const rowList2 = [3, 1, 2, 3];
  const rowList1 = [1, 2, 3, 1];
 
- const renderList = (rows: any, scale: '0.35', key: number) => {
+ const renderList = (rows: any, scale: '0.35') => {
+   const random = Math.floor(Math.random() * 9999)
   return (
    <div
     className="flex row"
@@ -24,7 +27,7 @@ export const BirthdayComp = () => {
      gap: '470px',
     }}>
     {rows && rows.map((row: any, index: number) => (
-     <div style={{ scale }} key={`${key}KEY${index}`}>
+     <div style={{ scale }} key={uuidv4()}>
       {componentList[row - 1]}
      </div>
     ))}
@@ -37,10 +40,10 @@ export const BirthdayComp = () => {
    <Animated animations={[
     Move({ y: 300, x: 300, start: 0 }),
     Rotate({ start: 30, degrees: 30 }),
-    Move({ y: 1795, x: -1020, start: 30 }),
+    Move({ y: 530, x: 5, start: 30 }),
     Scale({ start: 30, by: 2.9 }),
     Move({ x: -1370, start: 90 }),
-    Move({ y: -790, start: 170 }),
+    Move({ y: -785, start: 170 }),
    ]}>
     <div
      style={{
@@ -50,17 +53,18 @@ export const BirthdayComp = () => {
       flexDirection: 'column',
       flexGrow: 1,
       gap: 270,
-      marginTop: '-780px'
+      marginTop: '-780px',
+      marginLeft: '-380px'
      }}
     >
-     {[...Array(13)].map((_, index) => {
+     {[...Array(7)].map((_, index) => {
       const render3 = index % 3 === 0;
       const render2 = index % 2 === 0;
       return render3
-       ? renderList(rowList3, '0.35', index)
+       ? renderList(rowList3, '0.35')
        : render2
-        ? renderList(rowList2, '0.35', index)
-        : renderList(rowList1, '0.35', index)
+        ? renderList(rowList2, '0.35')
+        : renderList(rowList1, '0.35')
      })}
     </div>
    </Animated>

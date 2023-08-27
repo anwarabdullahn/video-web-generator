@@ -24,6 +24,7 @@
     "@remotion/paths": "4.0.24",
     "@remotion/player": "4.0.24",
     "@remotion/shapes": "4.0.24",
+    "@types/uuid": "^9.0.2",
     "antd": "^5.8.4",
     "moment-mini": "^2.29.4",
     "next": "^13.4.13",

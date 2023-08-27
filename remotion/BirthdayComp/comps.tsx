@@ -6,6 +6,7 @@ import { AgeIncrement, ageIncrementProps } from "../BirthdayComp/AgeIncrement";
 import { Floating } from "./Floating";
 import { Animated, Move } from "remotion-animated";
 import { Stars } from "./assets";
+import { v4 as uuidv4 } from 'uuid';
 import { Typography } from "antd";
 
 export const Page1CompositionProps = z.object({
@@ -219,20 +220,22 @@ export const BCPage2 = ({ backgroundColor, wishes, color }: z.infer<typeof Page2
           </Animated>
         </div>
       </Loop>
-      {stars && stars.map((star: any, index: number) => (
-        <div style={{
-          position: 'absolute',
-          width: star.width,
-          top: star.top ? star.top : 'unset',
-          bottom: star.bottom ? star.bottom : 'unset',
-          left: star.left,
-          transform: `rotateZ(${star.rotateRight ? rotateRight : rotateLeft})`
-        }}
-          key={`${index}KEY${Math.floor(Math.random() * 999)}`}
-        >
-          <Stars fill={star.fill} />
-        </div>
-      ))}
+      {stars && stars.map((star: any, index: number) => {
+        return (
+          <div style={{
+            position: 'absolute',
+            width: star.width,
+            top: star.top ? star.top : 'unset',
+            bottom: star.bottom ? star.bottom : 'unset',
+            left: star.left,
+            transform: `rotateZ(${star.rotateRight ? rotateRight : rotateLeft})`
+          }}
+            key={uuidv4()}
+          >
+            <Stars fill={star.fill} />
+          </div>
+        )
+      })}
       <div
         className="text-right"
         style={{ maxWidth: '800px', position: 'absolute', right: 50, top: 20 }}

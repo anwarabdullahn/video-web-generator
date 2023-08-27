@@ -30,7 +30,6 @@ export const BCPage1 = ({ age, backgroundColor, color }: z.infer<typeof Composit
 
   return (
     <div
-      className="m-4"
       style={{
         flexGrow: 1,
         position: 'relative',
@@ -41,7 +40,9 @@ export const BCPage1 = ({ age, backgroundColor, color }: z.infer<typeof Composit
         borderRadius: '15px',
         fontFamily: '"Segoe UI"'
       }}>
-      <AgeIncrement age={ageIncrementProps.age} />
+      <Loop durationInFrames={90}>
+        <AgeIncrement age={ageIncrementProps.age} />
+      </Loop>
       <Loop durationInFrames={60}>
         <HappyPerson />
       </Loop>

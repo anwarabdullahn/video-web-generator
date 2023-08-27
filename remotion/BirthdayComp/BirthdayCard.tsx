@@ -1,3 +1,5 @@
+import React from "react";
+import { AbsoluteFill } from "remotion";
 import { z } from "zod";
 
 export const CompositionProps = z.object({
@@ -7,26 +9,28 @@ export const CompositionProps = z.object({
   age: z.number()
 });
 
-export const mainDefaultProps: z.infer<typeof CompositionProps> = {
+export const birthdayCardProps: z.infer<typeof CompositionProps> = {
   name: "Your Name",
   backgroundColor: '#0bbbb9',
   color: '#ffffff',
   age: 27
 };
 
-export const Main = ({ name, backgroundColor, color }: z.infer<typeof CompositionProps>) => {
+export const BirthdayCard = ({ name, backgroundColor, color }: z.infer<typeof CompositionProps>) => {
   return (
-    <div
-      className="m-4"
+    <AbsoluteFill
       style={{
         backgroundColor,
         color,
         flexGrow: 1,
         fontSize: '70px',
         borderRadius: '15px',
-        fontFamily: '"Segoe UI"'
-      }}>
-      <div className="flex flex-col" style={{ marginLeft: '90px', marginTop: '100px' }}>
+        fontFamily: '"Segoe UI"',
+        width: '1280px',
+        height: '720px',
+      }}
+    >
+      <div className="flex flex-col" style={{ paddingLeft: '90px', paddingTop: '100px' }}>
         <span style={{
           fontFamily: '"Noto Sans", sans-serif',
           fontWeight: '100'
@@ -39,7 +43,7 @@ export const Main = ({ name, backgroundColor, color }: z.infer<typeof Compositio
           fontSize: '120px'
         }}>Its Your Birthday</span>
       </div>
-    </div>
+    </AbsoluteFill>
   )
 }
 

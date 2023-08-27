@@ -14,6 +14,7 @@ import './index.css'
 import { BC1Comp } from "./BC1Comp";
 import { HappyPerson } from "./BirthdayComp/HappyPerson";
 import { AgeIncrement, ageIncrementProps } from "./BirthdayComp/AgeIncrement";
+import { BirthdayCard, birthdayCardProps } from "./BirthdayComp/BirthdayCard";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -70,6 +71,15 @@ export const RemotionRoot: React.FC = () => {
         width={VIDEO_WIDTH}
         height={VIDEO_HEIGHT}
         defaultProps={ageIncrementProps}
+      />
+      <Composition
+        id="BirthdayCard"
+        component={BirthdayCard}
+        durationInFrames={120}
+        fps={VIDEO_FPS}
+        width={VIDEO_WIDTH}
+        height={VIDEO_HEIGHT}
+        defaultProps={birthdayCardProps}
       />
     </>
   );

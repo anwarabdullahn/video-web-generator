@@ -9,8 +9,13 @@ export const BC1Comp = () => {
   frame,
  });
 
+
  return (
-  <AbsoluteFill>
+  <AbsoluteFill style={{
+   width: '1280px',
+   height: '720px',
+   flexGrow: 1,
+  }}>
    <BCPage1 {...page1DefaultProps} />
   </AbsoluteFill>
  )

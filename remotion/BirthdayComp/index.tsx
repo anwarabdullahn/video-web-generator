@@ -15,7 +15,7 @@ export const BirthdayComp = () => {
  const rowList2 = [3, 1, 2, 3];
  const rowList1 = [1, 2, 3, 1];
 
- const renderList = (rows: any, scale: '0.35') => {
+ const renderList = (rows: any, scale: '0.35', key: number) => {
   return (
    <div
     className="flex row"
@@ -23,8 +23,8 @@ export const BirthdayComp = () => {
      flexGrow: 1,
      gap: '470px',
     }}>
-    {rows && rows.map((row: any) => (
-     <div style={{ scale }}>
+    {rows && rows.map((row: any, index: number) => (
+     <div style={{ scale }} key={`${key}KEY${index}`}>
       {componentList[row - 1]}
      </div>
     ))}
@@ -57,10 +57,10 @@ export const BirthdayComp = () => {
       const render3 = index % 3 === 0;
       const render2 = index % 2 === 0;
       return render3
-       ? renderList(rowList3, '0.35')
+       ? renderList(rowList3, '0.35', index)
        : render2
-        ? renderList(rowList2, '0.35')
-        : renderList(rowList1, '0.35')
+        ? renderList(rowList2, '0.35', index)
+        : renderList(rowList1, '0.35', index)
      })}
     </div>
    </Animated>

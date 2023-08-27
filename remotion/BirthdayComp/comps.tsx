@@ -219,7 +219,7 @@ export const BCPage2 = ({ backgroundColor, wishes, color }: z.infer<typeof Page2
           </Animated>
         </div>
       </Loop>
-      {stars && stars.map(star => (
+      {stars && stars.map((star: any, index: number) => (
         <div style={{
           position: 'absolute',
           width: star.width,
@@ -227,16 +227,18 @@ export const BCPage2 = ({ backgroundColor, wishes, color }: z.infer<typeof Page2
           bottom: star.bottom ? star.bottom : 'unset',
           left: star.left,
           transform: `rotateZ(${star.rotateRight ? rotateRight : rotateLeft})`
-        }}>
+        }}
+          key={`${index}KEY${Math.floor(Math.random() * 999)}`}
+        >
           <Stars fill={star.fill} />
         </div>
       ))}
       <div
         className="text-right"
-        style={{ maxWidth: '800px', position: 'absolute', right: 50, top: 20}}
+        style={{ maxWidth: '800px', position: 'absolute', right: 50, top: 20 }}
       >
         <Typography
-          style={{fontSize: '130px', fontFamily: "CHABUL, sans-serif", color, wordWrap: 'break-word', textShadow: '3px 3px #000'}}
+          style={{ fontSize: '130px', fontFamily: "CHABUL, sans-serif", color, wordWrap: 'break-word', textShadow: '3px 3px #000' }}
         >
           {wishes}
         </Typography>

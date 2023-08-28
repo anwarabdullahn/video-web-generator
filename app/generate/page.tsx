@@ -63,7 +63,25 @@ export default function index() {
   return (
     <Layout>
       <TopNav />
-      <Content className="flex row justify-between site-layout items-center" style={{ overflowX: 'hidden', minHeight: '85vh', flexGrow: 1, background: '#eee', flexDirection: isMobile() ? 'column' : 'row' }}>
+      <Content className="flex row justify-between site-layout items-center" style={{ overflowX: 'hidden', minHeight: '85vh', flexGrow: 1, background: '#eee', flexDirection: isMobile() || isTabled() ? 'column' : 'row' }}>
+      <div className='p-6' style={{ display: isMobile() || isTabled() ? 'block' : 'none', maxWidth: isMobile() ? '450px' : isTabled() ? '650px' : '55vw', minWidth: isMobile() ? '450px' : isTabled() ? '650px' : '55vw', minHeight: isMobile() || isTabled() ? '10px' : '600px', marginRight: isMobile() || isTabled() ? 'unset' : '60px' }}>
+          <div style={container}>
+            <div className="cinematics" style={outer}>
+              <Player
+                component={SimpleBirthdayComp}
+                inputProps={props}
+                durationInFrames={230}
+                fps={VIDEO_FPS}
+                compositionHeight={VIDEO_HEIGHT}
+                compositionWidth={VIDEO_WIDTH}
+                style={player}
+                controls
+                autoPlay
+                loop
+              />
+            </div>
+          </div>
+        </div>
         <div className='p-6' style={{ maxWidth: isMobile() || isTabled() ? 'unset' : '45vw', marginLeft: isMobile() || isTabled() ? 'unset' : '80px' }}>
           <VideoControl
             name={name}
@@ -87,7 +105,7 @@ export default function index() {
             inputProps={inputProps}
           ></VideoControl>
         </div>
-        <div className='p-6' style={{ maxWidth: '55vw', minWidth: '55vw', minHeight: '600px', marginRight: '60px' }}>
+        <div className='p-6' style={{ display: isMobile() || isTabled() ? 'none' : 'block', maxWidth: isMobile() ? '450px' : isTabled() ? '650px' : '55vw', minWidth: isMobile() ? '450px' : isTabled() ? '650px' : '55vw', minHeight: '600px', marginRight: isMobile() || isTabled() ? 'unset' : '60px' }}>
           <div style={container}>
             <div className="cinematics" style={outer}>
               <Player

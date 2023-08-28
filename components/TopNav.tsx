@@ -12,7 +12,7 @@ export default function index() {
    style={{
     position: 'sticky',
     top: 0,
-    zIndex: 1,
+    zIndex: 99999,
     width: '100%',
     color: 'black',
     backgroundColor: 'white'

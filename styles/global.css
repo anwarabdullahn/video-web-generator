@@ -97,11 +97,6 @@ body {
     }
 }
 
-.react-colorful {
-    height: 140px !important;
-    width: 140px !important;
-}
-
 .react-colorful__saturation {
     border-radius: 4px 4px 0 0;
 }

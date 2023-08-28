@@ -1,30 +1,13 @@
 import React from "react";
 import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { Animated, Move, Scale } from "remotion-animated";
+import { BirthdayCompositionProps } from "@/types/constants";
 import { z } from "zod";
 
-export const CompositionProps = z.object({
-  name: z.string(),
-  backgroundColor: z.string(),
-  color: z.string(),
-  age: z.number()
-});
-
-export const birthdayCardProps: z.infer<typeof CompositionProps> = {
-  name: "Your Name",
-  backgroundColor: '#0bbbb9',
-  color: '#ffffff',
-  age: 27
-};
-
-export const BirthdayCard = ({ name, backgroundColor, color }: z.infer<typeof CompositionProps>) => {
-  const { fps, durationInFrames } = useVideoConfig();
+export const BirthdayCard = ({ name, backgroundColor, color }: z.infer<typeof BirthdayCompositionProps>) => {
+  const { fps } = useVideoConfig();
   const frame = useCurrentFrame();
-  const scale = spring({
-    fps,
-    frame,
-    delay: 30,
-  });
+  const scale = spring({ fps, frame, delay: 30 });
   return (
     <AbsoluteFill
       style={{

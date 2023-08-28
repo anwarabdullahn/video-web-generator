@@ -1,6 +1,7 @@
 import { AbsoluteFill } from "remotion";
-import { BCPage2, Page2CompositionProps } from "./comps";
+import { BCPage2 } from "./comps";
 import { z } from "zod";
+import { Page2CompositionProps } from "@/types/constants";
 
 export const BC2Comp = ({ ...props }: z.infer<typeof Page2CompositionProps>) => {
  return (

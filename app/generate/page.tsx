@@ -12,6 +12,7 @@ import {
   CompositionProps,
   defaultMyCompProps,
   DURATION_IN_FRAMES,
+  simpleDefaultProps,
   VIDEO_FPS,
   VIDEO_HEIGHT,
   VIDEO_WIDTH,
@@ -80,7 +81,7 @@ export default function index() {
             <div className="cinematics" style={outer}>
               <Player
                 component={SimpleBirthdayComp}
-                inputProps={inputProps}
+                inputProps={simpleDefaultProps}
                 durationInFrames={310}
                 fps={VIDEO_FPS}
                 compositionHeight={VIDEO_HEIGHT}

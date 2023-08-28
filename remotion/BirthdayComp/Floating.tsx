@@ -2,15 +2,6 @@ import React from "react";
 import { AbsoluteFill } from "remotion";
 import { z } from "zod";
 import { Img, staticFile } from "remotion";
-import {
- Animated,
- Animation,
- Fade,
- Move,
- Rotate,
- Scale,
- Size,
-} from 'remotion-animated';
 
 export const FloatingProps = z.object({
  assetName: z.string()

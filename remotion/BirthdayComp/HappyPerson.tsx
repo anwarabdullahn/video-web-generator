@@ -2,12 +2,9 @@ import { useVideoConfig, useCurrentFrame, spring } from "remotion";
 import { HappySVG } from "./assets"
 
 export const HappyPerson = () => {
- const { fps, durationInFrames } = useVideoConfig()
+ const { fps } = useVideoConfig()
  const frame = useCurrentFrame()
- const scale = spring({
-  fps,
-  frame,
- });
+ const scale = spring({ fps, frame });
  return (
   <div
    style={{

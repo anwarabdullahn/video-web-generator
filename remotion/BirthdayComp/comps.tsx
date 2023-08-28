@@ -1,50 +1,15 @@
 import { z } from "zod";
-// import { HappySVG } from "./assets";
-import { useVideoConfig, useCurrentFrame, spring, Loop, Img, staticFile } from "remotion";
+import { useCurrentFrame, Loop, Img, staticFile } from "remotion";
 import { HappyPerson } from "../BirthdayComp/HappyPerson";
-import { AgeIncrement, ageIncrementProps } from "../BirthdayComp/AgeIncrement";
+import { AgeIncrement } from "../BirthdayComp/AgeIncrement";
 import { Floating } from "./Floating";
 import { Animated, Move } from "remotion-animated";
 import { Stars } from "./assets";
 import { v4 as uuidv4 } from 'uuid';
 import { Typography } from "antd";
-
-export const Page1CompositionProps = z.object({
-  name: z.string(),
-  backgroundColor: z.string(),
-  color: z.string(),
-  age: z.number()
-});
-
-export const Page2CompositionProps = z.object({
-  wishes: z.string(),
-  backgroundColor: z.string(),
-  color: z.string(),
-});
-
-export const page1DefaultProps: z.infer<typeof Page1CompositionProps> = {
-  name: "Your Name",
-  backgroundColor: '#ddafee',
-  color: '#ffffff',
-  age: 27
-};
-
-export const page2DefaultProps: z.infer<typeof Page2CompositionProps> = {
-  backgroundColor: '#281651',
-  color: '#ffffff',
-  wishes: 'Enjoy Your Special Day!'
-};
+import { Page1CompositionProps, Page2CompositionProps } from "@/types/constants";
 
 export const BCPage1 = ({ age, backgroundColor, color }: z.infer<typeof Page1CompositionProps>) => {
-  const currentAge = Number(age)
-  const lastAge = Number(age) - 1
-  const { fps, durationInFrames } = useVideoConfig()
-  const frame = useCurrentFrame()
-  let scale = spring({
-    fps,
-    frame,
-  });
-
   return (
     <div
       style={{
@@ -58,7 +23,7 @@ export const BCPage1 = ({ age, backgroundColor, color }: z.infer<typeof Page1Com
         fontFamily: '"Segoe UI"'
       }}>
       <Loop durationInFrames={90}>
-        <AgeIncrement age={ageIncrementProps.age} />
+        <AgeIncrement age={age} />
       </Loop>
       <Loop durationInFrames={60}>
         <HappyPerson />
@@ -111,7 +76,6 @@ export const BCPage2 = ({ backgroundColor, wishes, color }: z.infer<typeof Page2
         backgroundColor,
         color,
         fontSize: '70px',
-        // borderRadius: '15px',
         fontFamily: '"Segoe UI"'
       }}>
       <div>

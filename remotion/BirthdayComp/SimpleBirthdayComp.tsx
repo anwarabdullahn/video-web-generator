@@ -1,11 +1,43 @@
 import { AbsoluteFill } from "remotion";
-import { BirthdayCard, birthdayCardProps } from './BirthdayCard'
+import { BirthdayCard } from './BirthdayCard'
 import { BC1Comp } from "./BC1Comp";
 import { BC2Comp } from "./BC2Comp";
-import { page1DefaultProps, page2DefaultProps } from "./comps";
-import { Animated, Move, Rotate, Scale } from "remotion-animated";
+import { Animated, Move } from "remotion-animated";
+import { z } from "zod";
+import { Page1CompositionProps, Page2CompositionProps, SimpleCompositionProps } from "@/types/constants";
 
-export const SimpleBirthdayComp = () => {
+export const SimpleBirthdayComp = ({
+ name,
+ wishes,
+ age,
+ mainBackgroundColor,
+ mainColor,
+ secondBackgroundColor,
+ secondColor,
+ thirdBackgroundColor,
+ thirdColor,
+}: z.infer<typeof SimpleCompositionProps>) => {
+
+ const page2Props: z.infer<typeof Page2CompositionProps> = {
+  backgroundColor: thirdBackgroundColor,
+  color: thirdColor,
+  wishes,
+ }
+
+ const page1Props: z.infer<typeof Page1CompositionProps> = {
+  backgroundColor: secondBackgroundColor,
+  color: secondColor,
+  name,
+  age,
+ }
+
+ const birthdayProps: z.infer<typeof Page1CompositionProps> = {
+  backgroundColor: mainBackgroundColor,
+  color: mainColor,
+  name,
+  age,
+ }
+
  return (
   <AbsoluteFill style={{ backgroundColor: 'white' }}>
    <div
@@ -15,29 +47,13 @@ export const SimpleBirthdayComp = () => {
      flexGrow: 1,
     }}
    >
-
-    <Animated animations={[
-
-    ]}>
-     <BC2Comp {...page2DefaultProps} />
+    <BC2Comp {...page2Props} />
+    <Animated animations={[Move({ y: -720, start: 161 })]}>
+     <BC1Comp {...page1Props} />
     </Animated>
-    <Animated animations={[
-     Move({ y: -720, start: 161 })
-    ]}>
-     <BC1Comp {...page1DefaultProps} />
+    <Animated animations={[Move({ x: -1280, start: 90 })]}>
+     <BirthdayCard {...birthdayProps} />
     </Animated>
-
-    <Animated animations={[
-     Move({ x: -1280, start: 90 })
-    ]}>
-     <div
-     style={{position: 'absolute', top: 0}}
-     >
-      <BirthdayCard {...birthdayCardProps} />
-     </div>
-     
-    </Animated>
-
    </div>
   </AbsoluteFill>
  )

@@ -1,12 +1,8 @@
-import { useVideoConfig, useCurrentFrame, spring } from "remotion";
 import { z } from "zod";
 import {
  Animated,
- Animation,
  Fade,
- Move,
- Scale,
- Size,
+ Move
 } from 'remotion-animated';
 
 export const CompositionProps = z.object({

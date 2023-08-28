@@ -18,11 +18,9 @@ import {
   VIDEO_WIDTH,
 } from "../../types/constants";
 import { useMemo, useState } from 'react';
-import { RenderControls } from '@/components/RenderControls';
-import { Spacing } from '@/components/Spacing';
-import { Tips } from '@/components/Tips/Tips';
-import { BirthdayComp } from '@/remotion/BirthdayComp';
+import { VideoControl } from '@/components/VideoControl';
 import { SimpleBirthdayComp } from '@/remotion/BirthdayComp/SimpleBirthdayComp';
+import { isMobile, isTabled } from '../page';
 
 const container: React.CSSProperties = {
   maxWidth: 768,
@@ -50,39 +48,52 @@ export default function index() {
     };
   }, [text]);
 
+  const [name, setName] = useState(simpleDefaultProps.name)
+  const [age, setAge] = useState(simpleDefaultProps.age)
+  const [wishes, setWishes] = useState(simpleDefaultProps.wishes)
+  const [mainBackgroundColor, setMainBackgroundColor] = useState(simpleDefaultProps.mainBackgroundColor);
+  const [mainColor, setMainColor] = useState(simpleDefaultProps.mainColor);
+  const [secondBackgroundColor, setSecondBackgroundColor] = useState(simpleDefaultProps.secondBackgroundColor);
+  const [secondColor, setSecondColor] = useState(simpleDefaultProps.secondColor);
+  const [thirdBackgroundColor, setThirdBackgroundColor] = useState(simpleDefaultProps.thirdBackgroundColor);
+  const [thirdColor, setThirdColor] = useState(simpleDefaultProps.thirdColor);
+
+  const props = { name, age, wishes, mainBackgroundColor, mainColor, secondBackgroundColor, secondColor, thirdBackgroundColor, thirdColor }
+
   return (
     <Layout>
       <TopNav />
-      <Content className="flex row justify-between site-layout items-center" style={{ minHeight: '85vh', background: '#eee' }}>
-        <div className='p-6' style={{ maxWidth: '35vw', marginLeft: '80px' }}>
-          <Input
-            placeholder="Enter your name"
-            prefix={<UserOutlined className="site-form-item-icon" rev={undefined} />}
-          />
-          <br />
-          <br />
-          <Input
-            placeholder="Enter your age"
-            prefix={<HeartOutlined className="site-form-item-icon" rev={undefined} />}
-            suffix={
-              <Tooltip title="Extra information">
-                <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} rev={undefined} />
-              </Tooltip>
-            }
-          />
-          <br />
-          <br />
-          <Button type="primary" icon={<VideoCameraAddOutlined rev={undefined} />} size="large" style={{ backgroundColor: '#eb2f96' }} href='/generate'>
-            Generate Video
-          </Button>
+      <Content className="flex row justify-between site-layout items-center" style={{ overflowX: 'hidden', minHeight: '85vh', flexGrow: 1, background: '#eee', flexDirection: isMobile() ? 'column' : 'row' }}>
+        <div className='p-6' style={{ maxWidth: isMobile() || isTabled() ? 'unset' : '45vw', marginLeft: isMobile() || isTabled() ? 'unset' : '80px' }}>
+          <VideoControl
+            name={name}
+            setName={setName}
+            setAge={setAge}
+            setWishes={setWishes}
+            setMainBackgroundColor={setMainBackgroundColor}
+            setMainColor={setMainColor}
+            setSecondBackgroundColor={setSecondBackgroundColor}
+            setSecondColor={setSecondColor}
+            setThirdBackgroundColor={setThirdBackgroundColor}
+            setThirdColor={setThirdColor}
+            age={age}
+            wishes={wishes}
+            mainBackgroundColor={mainBackgroundColor}
+            mainColor={mainColor}
+            secondBackgroundColor={secondBackgroundColor}
+            secondColor={secondColor}
+            thirdBackgroundColor={thirdBackgroundColor}
+            thirdColor={thirdColor}
+            inputProps={inputProps}
+          ></VideoControl>
         </div>
-        <div className='p-6' style={{ maxWidth: '65vw', minWidth: '65vw', minHeight: '600px', marginRight: '60px' }}>
+        <div className='p-6' style={{ maxWidth: '55vw', minWidth: '55vw', minHeight: '600px', marginRight: '60px' }}>
           <div style={container}>
             <div className="cinematics" style={outer}>
               <Player
                 component={SimpleBirthdayComp}
-                inputProps={simpleDefaultProps}
-                durationInFrames={310}
+                inputProps={props}
+                durationInFrames={230}
                 fps={VIDEO_FPS}
                 compositionHeight={VIDEO_HEIGHT}
                 compositionWidth={VIDEO_WIDTH}
@@ -92,15 +103,6 @@ export default function index() {
                 loop
               />
             </div>
-            <RenderControls
-              text={text}
-              setText={setText}
-              inputProps={inputProps}
-            ></RenderControls>
-            <Spacing></Spacing>
-            <Spacing></Spacing>
-            <Spacing></Spacing>
-            <Spacing></Spacing>
           </div>
         </div>
       </Content>

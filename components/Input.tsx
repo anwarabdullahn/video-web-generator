@@ -14,9 +14,10 @@ const textarea: React.CSSProperties = {
 
 export const Input: React.FC<{
   text: string;
+  type?: string;
   setText: React.Dispatch<React.SetStateAction<string>>;
   disabled?: boolean;
-}> = ({ text, setText, disabled }) => {
+}> = ({ text, setText, disabled, type }) => {
   const onChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(
     (e) => {
       setText(e.currentTarget.value);
@@ -30,6 +31,7 @@ export const Input: React.FC<{
       name="title"
       style={textarea}
       value={text}
+      type={type}
       onChange={onChange}
     />
   );

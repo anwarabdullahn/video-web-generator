@@ -1,12 +1,13 @@
 'use client'
 
+import { isMobile } from '@/app/page';
 import { Carousel, Typography } from 'antd';
 import Paragraph from 'antd/es/typography/Paragraph';
 import Title from 'antd/es/typography/Title';
 
 export default function index() {
  return (
-  <div className='text-center' style={{ maxWidth: '700px', marginRight: '80px' }}>
+  <div className='text-center' style={{ maxWidth: isMobile() ? '380px' : '700px', marginRight: '80px' }}>
    <Carousel dots dotPosition='bottom'>
     <div className='mx-auto p-6'>
      <img

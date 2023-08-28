@@ -23,7 +23,7 @@ export const BCPage1 = ({ age, backgroundColor, color }: z.infer<typeof Page1Com
         fontFamily: '"Segoe UI"'
       }}>
       <Loop durationInFrames={90}>
-        <AgeIncrement age={age} />
+        <AgeIncrement age={age} color={color} />
       </Loop>
       <Loop durationInFrames={60}>
         <HappyPerson />

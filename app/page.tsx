@@ -1,20 +1,28 @@
 'use client'
 
 import { Button, Layout, Typography } from 'antd';
-import { Content, Footer, Header } from 'antd/es/layout/layout';
+import { Content } from 'antd/es/layout/layout';
 import Paragraph from 'antd/es/typography/Paragraph';
 import Title from 'antd/es/typography/Title';
 import { VideoCameraAddOutlined } from '@ant-design/icons';
 import { TopNav, BottomFooter, Carousel } from '@/components';
 
+export const isMobile = () => {
+  return window.innerWidth <= 425
+}
+
+export const isTabled = () => {
+  return window.innerWidth <= 768
+}
+
 export default function index() {
   return (
     <Layout>
       <TopNav />
-      <Content className="flex row justify-between site-layout items-center" style={{ minHeight: '85vh', background: '#eee' }}>
-        <div className='p-6' style={{ maxWidth: '35vw', marginLeft: '80px' }}>
+      <Content className="flex row justify-between site-layout items-center" style={{ overflowX: 'hidden', minHeight: '85vh', flexGrow: 1, background: '#eee', flexDirection: isMobile() || isTabled() ? 'column' : 'row' }}>
+        <div className='p-6' style={{ maxWidth: isMobile() || isTabled() ? 'unset' : '45vw', marginLeft: isMobile() || isTabled() ? 'unset' : '80px' }}>
           <Typography>
-            <Title style={{ fontSize: '45px' }}>Premium video meetings. Now free for everyone.</Title>
+            <Title style={{ flexGrow: 1, fontSize: isMobile() || isTabled() ? '25px' : '45px', marginTop: isTabled() ? '50px' : 'unset' }}>Premium video meetings. Now free for everyone.</Title>
             <Paragraph>
               We re-engineered the service we built for secure business meetings, Google Meet, to make it free and available for all.
             </Paragraph>
@@ -23,7 +31,7 @@ export default function index() {
             Generate Video
           </Button>
         </div>
-        <div className='p-6' style={{ maxWidth: '65vw', minHeight: '600px', marginRight: '60px' }}>
+        <div className='p-6' style={{ maxWidth: isMobile() || isTabled() ? 'unset' : '55vw', marginRight: isMobile() || isTabled() ? 'unset' : '60px', margin: isMobile() || isTabled() ? 'auto' : 'unset' }}>
           <Carousel />
         </div>
       </Content>

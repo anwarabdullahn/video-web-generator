@@ -29,7 +29,10 @@
     "moment-mini": "^2.29.4",
     "next": "^13.4.13",
     "react": "^18.2.0",
+    "react-color": "^2.19.3",
+    "react-colorful": "^5.6.1",
     "react-dom": "^18.2.0",
+    "reactcss": "^1.2.3",
     "remotion": "4.0.24",
     "remotion-animated": "^2.0.0",
     "zod": "^3.21.4"
@@ -39,6 +42,7 @@
     "@remotion/tailwind": "^4.0.24",
     "@types/node": "18.7.23",
     "@types/react": "18.0.26",
+    "@types/react-color": "^3.0.6",
     "@types/react-dom": "18.0.6",
     "@types/web": "^0.0.61",
     "autoprefixer": "^10.4.15",

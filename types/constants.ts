@@ -62,13 +62,13 @@ export const SimpleCompositionProps = z.object({
 export const simpleDefaultProps: z.infer<typeof SimpleCompositionProps> = {
   name: birthdayCardProps.name,
   age: page1DefaultProps.age,
+  wishes: page2DefaultProps.wishes,
   mainBackgroundColor: birthdayCardProps.backgroundColor,
   mainColor: birthdayCardProps.color,
   secondBackgroundColor: page1DefaultProps.backgroundColor,
   secondColor: page1DefaultProps.color,
   thirdBackgroundColor: page2DefaultProps.backgroundColor,
   thirdColor: page2DefaultProps.color,
-  wishes: page2DefaultProps.wishes
 }
 
 export const DURATION_IN_FRAMES = 200;

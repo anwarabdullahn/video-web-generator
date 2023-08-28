@@ -6,14 +6,16 @@ import {
 } from 'remotion-animated';
 
 export const CompositionProps = z.object({
- age: z.number()
+ age: z.number(),
+ color: z.string()
 });
 
 export const ageIncrementProps: z.infer<typeof CompositionProps> = {
- age: 27
+ age: 27,
+ color: 'white'
 };
 
-export const AgeIncrement = ({ age }: z.infer<typeof CompositionProps>) => {
+export const AgeIncrement = ({ age, color }: z.infer<typeof CompositionProps>) => {
  const currentAge = Number(age)
  const lastAge = Number(age) - 1
 
@@ -29,6 +31,7 @@ export const AgeIncrement = ({ age }: z.infer<typeof CompositionProps>) => {
     <span className="my-0" style={{
      fontFamily: '"Noto Sans", sans-serif',
      fontWeight: '500',
+     color,
      fontSize: '450px',
      marginLeft: '-600px'
     }}>{lastAge}</span>
@@ -42,6 +45,7 @@ export const AgeIncrement = ({ age }: z.infer<typeof CompositionProps>) => {
     <span className="my-0" style={{
      fontFamily: '"Noto Sans", sans-serif',
      fontWeight: '500',
+     color,
      fontSize: '450px',
      marginLeft: '60px'
     }}>{currentAge}</span>

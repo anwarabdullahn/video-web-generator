@@ -21,6 +21,7 @@ import { RenderControls } from '@/components/RenderControls';
 import { Spacing } from '@/components/Spacing';
 import { Tips } from '@/components/Tips/Tips';
 import { BirthdayComp } from '@/remotion/BirthdayComp';
+import { SimpleBirthdayComp } from '@/remotion/BirthdayComp/SimpleBirthdayComp';
 
 const container: React.CSSProperties = {
   maxWidth: 768,
@@ -78,7 +79,7 @@ export default function index() {
           <div style={container}>
             <div className="cinematics" style={outer}>
               <Player
-                component={BirthdayComp}
+                component={SimpleBirthdayComp}
                 inputProps={inputProps}
                 durationInFrames={310}
                 fps={VIDEO_FPS}

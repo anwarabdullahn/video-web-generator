@@ -18,6 +18,7 @@ import { BirthdayCard, birthdayCardProps } from "./BirthdayComp/BirthdayCard";
 import { Floating, floatingDefaultProps } from "./BirthdayComp/Floating";
 import { BC2Comp } from "./BirthdayComp/BC2Comp";
 import { page1DefaultProps, page2DefaultProps } from "./BirthdayComp/comps";
+import { SimpleBirthdayComp } from "./BirthdayComp/SimpleBirthdayComp";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -45,6 +46,14 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="BirthdayComp"
         component={BirthdayComp}
+        durationInFrames={310}
+        fps={VIDEO_FPS}
+        width={VIDEO_WIDTH}
+        height={VIDEO_HEIGHT}
+      />
+      <Composition
+        id="SimpleBirthdayComp"
+        component={SimpleBirthdayComp}
         durationInFrames={310}
         fps={VIDEO_FPS}
         width={VIDEO_WIDTH}

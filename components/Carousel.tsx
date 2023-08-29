@@ -9,18 +9,18 @@ export default function index() {
  const carouselList = [
   {
    image: '/2.svg',
-   title: 'Premium video meetings. Now free for everyone.',
-   subTitle: 'We re-engineered the service we built for secure business meetings, Google Meet, to make it free and available for all.'
+   title: 'Customize Your Own Video',
+   subTitle: 'Easy Customizable, You can choose the color and wishes anything you like to make it personal.'
   },
   {
    image: '/3.svg',
-   title: 'Premium video meetings. Now free for everyone.',
-   subTitle: 'We re-engineered the service we built for secure business meetings, Google Meet, to make it free and available for all.'
+   title: 'Free for everyone.',
+   subTitle: 'Its 100% free. You dont need to pay for video editor, just use our website.'
   },
   {
    image: '/4.svg',
-   title: 'Premium video meetings. Now free for everyone.',
-   subTitle: 'We re-engineered the service we built for secure business meetings, Google Meet, to make it free and available for all.'
+   title: 'Easy Download.',
+   subTitle: 'One button to download. You can download the video directly from your browser anywhere.'
   }
  ]
  return (

@@ -24,9 +24,9 @@ export default function index() {
       <Content className="flex row justify-between site-layout items-center" style={{ overflowX: 'hidden', minHeight: '85vh', flexGrow: 1, background: '#eee', flexDirection: isMobile() || isTabled() ? 'column' : 'row' }}>
         <div className='p-6' style={{ maxWidth: isMobile() || isTabled() ? 'unset' : '45vw', marginLeft: isMobile() || isTabled() ? 'unset' : '80px' }}>
           <Typography>
-            <Title style={{ flexGrow: 1, fontSize: isMobile() || isTabled() ? '25px' : '45px', marginTop: isTabled() ? '50px' : 'unset' }}>Premium video meetings. Now free for everyone.</Title>
+            <Title style={{ flexGrow: 1, fontSize: isMobile() || isTabled() ? '25px' : '45px', marginTop: isTabled() ? '50px' : 'unset', whiteSpace: 'pre-wrap' }}>{"Birthday Video Generator.\nNow free for everyone."}</Title>
             <Paragraph>
-              We re-engineered the service we built for secure business meetings, Google Meet, to make it free and available for all.
+              We engineered this service for your beloved, Birthday Video Generator, its simple and its free.
             </Paragraph>
           </Typography>
           <Button type="primary" icon={<VideoCameraAddOutlined rev={undefined} />} size="large" style={{ backgroundColor: '#eb2f96' }} href='/generate'>

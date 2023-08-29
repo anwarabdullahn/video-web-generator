@@ -2,6 +2,6 @@ import { Footer } from "antd/es/layout/layout";
 
 export default function index() {
  return (
-  <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Anwar Abdullah</Footer>
+  <Footer style={{ textAlign: 'center' }}>Created by Anwar Abdullah © 2023</Footer>
  )
 }

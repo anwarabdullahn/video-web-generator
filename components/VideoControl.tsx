@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { useRendering } from "../helpers/use-rendering";
-import { CompositionProps, COMP_NAME } from "../types/constants";
+import { CompositionProps, COMP_NAME, SimpleCompositionProps } from "../types/constants";
 import { AlignEnd } from "./AlignEnd";
 import { Button } from "./Button/Button";
 import { InputContainer } from "./Container";
@@ -32,7 +32,7 @@ export const VideoControl: React.FC<{
  setSecondColor: React.Dispatch<React.SetStateAction<string>>;
  setThirdBackgroundColor: React.Dispatch<React.SetStateAction<string>>;
  setThirdColor: React.Dispatch<React.SetStateAction<string>>;
- inputProps: z.infer<typeof CompositionProps>;
+ inputProps: z.infer<typeof SimpleCompositionProps>;
 }> = ({
  name,
  age,

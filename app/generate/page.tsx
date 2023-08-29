@@ -102,7 +102,7 @@ export default function index() {
             secondColor={secondColor}
             thirdBackgroundColor={thirdBackgroundColor}
             thirdColor={thirdColor}
-            inputProps={inputProps}
+            inputProps={props}
           ></VideoControl>
         </div>
         <div className='p-6' style={{ display: isMobile() || isTabled() ? 'none' : 'block', maxWidth: isMobile() ? '450px' : isTabled() ? '650px' : '55vw', minWidth: isMobile() ? '450px' : isTabled() ? '650px' : '55vw', minHeight: '600px', marginRight: isMobile() || isTabled() ? 'unset' : '60px' }}>

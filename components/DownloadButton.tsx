@@ -2,6 +2,7 @@ import React from "react";
 import { State } from "../helpers/use-rendering";
 import { Button } from "./Button/Button";
 import { Spacing } from "./Spacing";
+import { SyncOutlined } from "@ant-design/icons";
 
 const light: React.CSSProperties = {
   opacity: 0.6,
@@ -33,7 +34,7 @@ export const DownloadButton: React.FC<{
   undo: () => void;
 }> = ({ state, undo }) => {
   if (state.status === "rendering") {
-    return <Button disabled>Download video</Button>;
+    return <Button disabled>Downloading video. <SyncOutlined spin size={6} rev={null}/></Button>;
   }
 
   if (state.status !== "done") {

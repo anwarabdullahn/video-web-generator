@@ -19,7 +19,6 @@ export const BCPage1 = ({ age, backgroundColor, color }: z.infer<typeof Page1Com
         backgroundColor,
         color,
         fontSize: '70px',
-        // borderRadius: '15px',
         fontFamily: '"Segoe UI"'
       }}>
       <Loop durationInFrames={90}>

@@ -84,21 +84,21 @@ export const VideoControl: React.FC<{
         <span className="mb-3">
          Main Background Color
         </span>
-        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px'}} color={mainBackgroundColor} onChange={setMainBackgroundColor} />
+        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px' }} color={mainBackgroundColor} onChange={setMainBackgroundColor} />
        </div>
 
        <div>
         <span className="mb-3">
          Second Background Color
         </span>
-        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px'}} color={secondBackgroundColor} onChange={setSecondBackgroundColor} />
+        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px' }} color={secondBackgroundColor} onChange={setSecondBackgroundColor} />
        </div>
 
        <div>
         <span className="mb-3">
          Third Background Color
         </span>
-        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px'}} color={thirdBackgroundColor} onChange={setThirdBackgroundColor} />
+        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px' }} color={thirdBackgroundColor} onChange={setThirdBackgroundColor} />
        </div>
 
       </div>
@@ -107,19 +107,19 @@ export const VideoControl: React.FC<{
         <span className="mb-3">
          Main Color
         </span>
-        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px'}} color={mainColor} onChange={setMainColor} />
+        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px' }} color={mainColor} onChange={setMainColor} />
        </div>
        <div>
         <span className="mb-3">
          Second Color
         </span>
-        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px'}} color={secondColor} onChange={setSecondColor} />
+        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px' }} color={secondColor} onChange={setSecondColor} />
        </div>
        <div>
         <span className="mb-3">
          Third Color
         </span>
-        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px'}} color={thirdColor} onChange={setThirdColor} />
+        <HexColorPicker style={{ width: isMobile() ? '80px' : '150px', height: isMobile() ? '80px' : '150px', marginTop: '20px' }} color={thirdColor} onChange={setThirdColor} />
        </div>
       </div>
       <Spacing></Spacing>

@@ -8,11 +8,13 @@ import { VideoCameraAddOutlined } from '@ant-design/icons';
 import { TopNav, BottomFooter, Carousel } from '@/components';
 
 export const isMobile = () => {
-  return window?.innerWidth <= 425
+  console.log(window)
+  return typeof window !== 'undefined' && window?.innerWidth <= 425
 }
 
 export const isTabled = () => {
-  return window?.innerWidth <= 768
+  console.log(window)
+  return typeof window !== 'undefined' && window?.innerWidth <= 768
 }
 
 export default function index() {
